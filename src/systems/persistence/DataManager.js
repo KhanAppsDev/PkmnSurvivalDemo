@@ -41,7 +41,7 @@ export class DataManager {
   /** Returns Phaser texture key to use for this species. */
   getSpriteKey(id) {
     if (this._failed.has(id)) return `fallback_${id}`;
-    return `pokemon_${id}`;
+    return `pmd_${id}_walk`;
   }
 
   clearSpriteCache() {
@@ -49,3 +49,5 @@ export class DataManager {
     localStorage.removeItem(SPRITE_CACHE_KEY);
   }
 }
+
+
