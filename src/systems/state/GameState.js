@@ -35,6 +35,9 @@ export class GameState {
     // Active status effects on player: [{ id, duration, magnitude }]
     this.playerStatusEffects = [];
 
+    // Satiety timer (ms) — set by cooking system, pauses hunger decay while > 0
+    this._satietyMs = 0;
+
     // ── World ──────────────────────────────────────────────────────────
     this.day         = 1;
     this.segment     = 'morning'; // 'morning'|'midday'|'afternoon'|'dusk'
@@ -81,15 +84,19 @@ export class GameState {
       floorSeed:     0,
       scout1EntityId: null,
       scout2EntityId: null,
+      scout1Pos:     { x: 0, y: 0 },
+      scout2Pos:     { x: 1, y: 0 },
       scout2Behavior: 'cautious',
       pendingLoot:   [],
       runActive:     false,
       runResult:     null,
       floor: {
-        grid:      [],
-        rooms:     [],
-        staircase: null,
+        grid:        [],
+        rooms:       [],
+        staircase:   null,
         playerStart: null,
+        enemies:     [],
+        items:       [],
       },
     };
   }
