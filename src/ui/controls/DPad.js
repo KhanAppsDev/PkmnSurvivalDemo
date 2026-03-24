@@ -57,9 +57,7 @@ export class DPad {
 
     const emit = () => this.events.emit('input:dpad', { direction: dir });
 
-    bg.on('pointerdown', emit);
-
-    // Held-direction support — emit every 150ms while held
+    // Held-direction support — emit immediately on press, then every 150ms while held
     let held = null;
     bg.on('pointerdown', () => {
       emit();
