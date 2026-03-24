@@ -48,4 +48,4 @@ export class DataManager {
     this._cache = {};
     localStorage.removeItem(SPRITE_CACHE_KEY);
   }
-
+}
