@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-import { DUNGEON_TILE, DUNGEON_COLORS } from '../data/biomes.js';
+import { DUNGEON_TILE } from '../utils/grid.js';
+import { DUNGEON_COLORS } from '../data/biomes.js';
 import { DPad } from '../ui/controls/DPad.js';
 import { POKEMON_BY_ID, DEMO_SCOUT_IDS } from '../data/pokemon.js';
 import { PokemonInstance } from '../entities/PokemonInstance.js';
