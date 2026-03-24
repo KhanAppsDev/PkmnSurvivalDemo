@@ -93,8 +93,6 @@ export class MovementSystem {
 
   _enemyAt(x, y) {
     return this.game.entities.queryTag('enemy').find(e => {
-      const m = e.get ? e.get({ name: 'MovementComponent' }) : null;
-      // Use duck typing since we import MovementComponent elsewhere
       const move = e._components?.get('MovementComponent');
       return move && move.x === x && move.y === y;
     });
